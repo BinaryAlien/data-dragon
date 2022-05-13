@@ -1,11 +1,23 @@
 import { Dataset } from './dataset';
 
-import { Champion } from './types/champion';
-import { Item } from './types/item';
+import {
+    Champion,
+    ChampionInfo,
+    ChampionImage,
+    ChampionStats
+} from './types/champion';
+
+import {
+    Item,
+    ItemRune,
+    ItemGold,
+    ItemStats,
+    ItemMaps
+} from './types/item';
 
 import axios from 'axios';
 
-export class DataDragon {
+class DataDragon {
     public readonly version: string;
 
     public readonly champions: Dataset<Champion>;
@@ -37,3 +49,10 @@ export class DataDragon {
         return response.data[0];
     }
 }
+
+export {
+    DataDragon,
+    Dataset,
+    Champion, ChampionInfo, ChampionImage, ChampionStats,
+    Item, ItemRune, ItemGold, ItemStats, ItemMaps
+};

@@ -1,6 +1,6 @@
 {
   "name": "data-dragon",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "TypeScript wrapper for the Data Dragon Riot API",
   "main": "lib/index.js",
   "directories": {
