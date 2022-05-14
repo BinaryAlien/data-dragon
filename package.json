@@ -1,6 +1,6 @@
 {
   "name": "data-dragon",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "TypeScript wrapper for the Data Dragon Riot API",
   "main": "lib/index.js",
   "directories": {
@@ -24,9 +24,6 @@
     "url": "https://github.com/BinaryAlien/data-dragon/issues"
   },
   "homepage": "https://github.com/BinaryAlien/data-dragon#readme",
-  "dependencies": {
-    "axios": "^0.27.2"
-  },
   "devDependencies": {
     "@babel/core": "^7.17.10",
     "@babel/preset-env": "^7.17.10",

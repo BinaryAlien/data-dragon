@@ -1,4 +1,4 @@
-import axios from 'axios';
+import fetch from './fetch';
 
 export class Dataset<T> {
     public readonly key: string;
@@ -17,11 +17,10 @@ export class Dataset<T> {
         if (this.size !== 0)
             return this;
 
-        const response = await axios.get(
-            `https://ddragon.leagueoflegends.com/cdn/${this.version}/data/en_US/${this.key}.json`);
+        const dataset = await fetch(`/cdn/${this.version}/data/en_US/${this.key}.json`);
 
-        for (const champ in response.data["data"])
-            this._cache.set(champ, response.data["data"][champ]);
+        for (const champ in dataset['data'])
+            this._cache.set(champ, dataset['data'][champ]);
 
         return this;
     }

@@ -1,21 +1,14 @@
 import { Dataset } from './dataset';
 
 import {
-    Champion,
-    ChampionInfo,
-    ChampionImage,
-    ChampionStats
+    Champion, ChampionInfo, ChampionImage, ChampionStats
 } from './types/champion';
 
 import {
-    Item,
-    ItemRune,
-    ItemGold,
-    ItemStats,
-    ItemMaps
+    Item, ItemRune, ItemGold, ItemStats, ItemMaps
 } from './types/item';
 
-import axios from 'axios';
+import fetch from './fetch';
 
 class DataDragon {
     public readonly version: string;
@@ -45,8 +38,8 @@ class DataDragon {
      * @returns latest version of League of Legends
      */
     static async fetchLatestVersion(): Promise<string> {
-        const response = await axios.get('https://ddragon.leagueoflegends.com/api/versions.json');
-        return response.data[0];
+        const versions = await fetch('/api/versions.json');
+        return versions[0];
     }
 }
 

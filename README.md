@@ -25,14 +25,19 @@ const dragon = new DataDragon('11.4.1');
 
 console.log(dragon.champions.size);
 // > 0
+console.log(dragon.items.size);
+// > 0
 
 await dragon.champions.fetch();
+await dragon.items.fetch();
 
-console.log(dragon.champions);
+console.log(dragon.champions.size);
 // > 154
+console.log(dragon.items.size);
+// > 201
 ```
 
-Once a dataset is cached, calling its `fetch` function again will have no effect.
+Once a dataset is cached, calling its `fetch` method again will have no effect.
 
 ```javascript
 import { DataDragon } from 'data-dragon';
@@ -40,14 +45,15 @@ import { DataDragon } from 'data-dragon';
 const dragon = new DataDragon('11.4.1');
 
 await dragon.champions.fetch();
+await dragon.items.fetch();
 
-const mundo = dragon.champions.find(champion.name => 'Dr. Mundo');
+const mundo = dragon.champions.find(champion => champion.name === 'Dr. Mundo');
 console.log(mundo.id);
 // > DrMundo
 
-const squishy = dragon.champions.count(champion => champion.stats.hp < 500 && champion.stats.armor <= 25);
-console.log(squishy);
-// > 4
+const fast = dragon.champions.count(champion => champion.stats.movespeed > 340);
+console.log(fast);
+// > 34
 
 const biscuit = dragon.items.find(item => item.name === 'Total Biscuit of Everlasting Will');
 console.log(biscuit.gold.total);
