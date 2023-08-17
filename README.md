@@ -6,7 +6,7 @@
 
 **Instantiate** a `DataDragon` object.
 
-```javascript
+```typescript
 import { DataDragon } from "data-dragon";
 
 // Specify a game version ...
@@ -18,7 +18,7 @@ const dragon = await DataDragon.latest();
 
 **Fetch** the datasets you would like to use.
 
-```javascript
+```typescript
 import { DataDragon } from "data-dragon";
 
 const dragon = new DataDragon("11.4.1");
@@ -35,7 +35,7 @@ console.log(dragon.items.size); // 201
 
 The datasets are cached, thus fetching is only required **once per dataset**.
 
-```javascript
+```typescript
 import { DataDragon } from "data-dragon";
 
 const dragon = new DataDragon("11.4.1");
