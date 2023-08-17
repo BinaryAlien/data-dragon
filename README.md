@@ -1,6 +1,8 @@
 # data-dragon
 
-🐉 A TypeScript wrapper for the [Data Dragon](https://riot-api-libraries.readthedocs.io/en/latest/ddragon.html) Riot API.
+🐉 A TypeScript wrapper for the
+[Data Dragon](https://riot-api-libraries.readthedocs.io/en/latest/ddragon.html)
+Riot API.
 
 ## Usage
 
